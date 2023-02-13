@@ -1,12 +1,14 @@
 ---
 import Layout from "../layouts/Layout.astro"
 import Card from "../components/Card.astro"
+const pageTitle = "Welcome to the Hole."
 ---
 
-<Layout title="Welcome to the Hole.">
+<Layout title={pageTitle}>
 	<main>
 		<a href="/">Home</a>
 		<a href="/about/">About</a>
+		<a href="/blog/">Blog</a>
 
 		<h1>Welcome to <span class="text-gradient">the Hole</span></h1>
 		<p class="instructions">
