@@ -3,19 +3,9 @@ const { url, title } = Astro.props
 ---
 
 <li>
-	<a href={url}>{title}</a>
+	<a
+		class="text-2xl drop-shadow-[0_6px_1px_rgba(217,70,239,0.8)] text-center font-mono py-2"
+		href={url}
+		>{title}</a
+	>
 </li>
-
-<style>
-	a {
-		padding: 0.5rem 1rem;
-		color: white;
-		background-color: #4c1d95;
-		text-decoration: none;
-	}
-
-	li {
-		margin: 1rem;
-		list-style: none;
-	}
-</style>

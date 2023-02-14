@@ -1,8 +1,8 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
-title: My Third Blog Post
-author: Astro Learner
-description: "I had some challenges, but asking in the community really helped!"
+title: "Der Dritte"
+author: "Maal"
+description: "kleine beschreibung zum 3ten"
 image:
   url: "https://astro.build/assets/blog/community-day/cover.jpg"
   alt: "The word community with a heart."
