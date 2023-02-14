@@ -1,5 +1,8 @@
 ---
+import BlogPost from "../components/BlogPost.astro"
 import BaseLayout from "../layouts/BaseLayout.astro"
+
+const allPosts = await Astro.glob("../pages/posts/*.md")
 
 const pageTitle = "Welcome to the Hole."
 const pageBackground = "bg-index-bg"
@@ -9,9 +12,9 @@ const pageBackground = "bg-index-bg"
 	pageTitle={pageTitle}
 	pageBackground={pageBackground}
 >
-	<main class="flex flex-col">
+	<main class="flex flex-col flex-1">
 		<h1
-			class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl drop-shadow-[0_6px_2px_rgba(217,70,239,0.8)] text-center font-bold transition duration-500"
+			class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl drop-shadow-[0_6px_2px_rgba(217,70,239,0.8)] text-center font-bold transition duration-500 py-2"
 		>
 			<a
 				class="hover:drop-shadow-xl hover:shadow-fuchsia-900 hover:transition duration-700"
@@ -19,8 +22,9 @@ const pageBackground = "bg-index-bg"
 				>RABBITHOLE_AI</a
 			>
 		</h1>
+
 		<div
-			class="text-2xl drop-shadow-[0_6px_1px_rgba(217,70,239,0.8)] text-center font-bold"
+			class="text-2xl drop-shadow-[0_6px_1px_rgba(217,70,239,0.8)] text-center font-bold py-2"
 		>
 			<a
 				class="hover:drop-shadow-xl hover:shadow-fuchsia-900 hover:transition duration-700"
@@ -40,5 +44,16 @@ const pageBackground = "bg-index-bg"
 				>SAGEN</a
 			>
 		</div>
+
+		<ul class="flex flex-col py-2 flex-1 justify-evenly place-items-center">
+			{
+				allPosts.slice(-2).map((post) => (
+					<BlogPost
+						url={post.url}
+						title={post.frontmatter.title}
+					/>
+				))
+			}
+		</ul>
 	</main>
 </BaseLayout>
