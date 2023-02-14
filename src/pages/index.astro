@@ -1,5 +1,6 @@
 ---
 import BlogPost from "../components/BlogPost.astro"
+import BlogPostPreview from "../components/BlogPostPreview.astro"
 import BaseLayout from "../layouts/BaseLayout.astro"
 
 const allPosts = await Astro.glob("../pages/posts/*.md")
@@ -17,7 +18,7 @@ const pageBackground = "bg-index-bg"
 			class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl drop-shadow-[0_6px_2px_rgba(217,70,239,0.8)] text-center font-bold transition duration-600 py-2"
 		>
 			<a
-				class="hover:drop-shadow-xl hover:shadow-fuchsia-900 hover:transition duration-700"
+				class="drop-shadow-md ease-in shadow-black text-center font-bold py-2 hover:drop-shadow-sm hover:shadow-fuchsia-900 hover:text-fuchsia-200 hover:transition duration-700 px-1"
 				href="/about"
 				>RABBITHOLE_AI</a
 			>
@@ -27,7 +28,7 @@ const pageBackground = "bg-index-bg"
 			class="text-2xl drop-shadow-[0_6px_1px_rgba(217,70,239,0.8)] text-center font-bold py-2"
 		>
 			<a
-				class="hover:drop-shadow-xl hover:shadow-fuchsia-900 hover:transition duration-700 px-1"
+				class="text-2xl drop-shadow-md ease-in shadow-black text-center font-bold py-2 hover:drop-shadow-sm hover:shadow-fuchsia-900 hover:text-fuchsia-200 hover:transition duration-700 px-1"
 				href="/visual"
 				>SEHEN</a
 			>
@@ -39,21 +40,29 @@ const pageBackground = "bg-index-bg"
 			>
 			<span class="">-</span>
 			<a
-				class="hover:drop-shadow-2xl hover:shadow-fuchsia-900 hover:transition duration-700 px-1"
+				class="text-2xl drop-shadow-md ease-in shadow-black text-center font-bold py-2 hover:drop-shadow-sm hover:shadow-fuchsia-900 hover:text-fuchsia-200 hover:transition duration-700 px-1"
 				href="/blog"
 				>SAGEN</a
 			>
 		</div>
 
-		<ul class="flex flex-col py-2 flex-1 justify-evenly place-items-center">
-			{
-				allPosts.slice(-2).map((post) => (
-					<BlogPost
-						url={post.url}
-						title={post.frontmatter.title}
-					/>
-				))
-			}
-		</ul>
+		<div
+			class="md:w-1/2 mx-auto flex-1 border-t-fuchsia-800 flex flex-col p-2 mt-2"
+		>
+			<span
+				class="text-xl font-mono border-t-4 text-fuchsia-800 border-fuchsia-300 border-double mt-2 pt-4 border-opacity-40"
+			></span>
+			<ul class="flex flex-col flex-1 justify-evenly">
+				{
+					allPosts.slice(-2).map((post) => (
+						<BlogPostPreview
+							url={post.url}
+							title={post.frontmatter.title}
+							description={post.frontmatter.description}
+						/>
+					))
+				}
+			</ul>
+		</div>
 	</main>
 </BaseLayout>

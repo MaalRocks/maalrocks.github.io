@@ -1,0 +1,17 @@
+---
+const { url, title, description } = Astro.props
+---
+
+<li
+	class="bg-fuchsia-100 bg-opacity-40 shadow-fuchsia-400 shadow-xl hover:bg-fuchsia-50 hover:shadow-2xl hover:shadow-fuchsia-800 duration-700 ease-in my-2"
+>
+	<a
+		class="text-2xl drop-shadow-[0_6px_1px_rgba(217,70,239,0.8)] text-center m-5 hover:drop-shadow-[0px_40px_10px_rgba(217,70,239,0)] duration-700 ease-in"
+		href={url}
+	>
+		<div class="h-full p-3">
+			<h3>{title}</h3>
+			<small>{description}</small>
+		</div>
+	</a>
+</li>
