@@ -9,18 +9,24 @@ const pageBackground = "bg-index-bg"
 	pageTitle={pageTitle}
 	pageBackground={pageBackground}
 >
-	<main class="flex flex-col w-full mt-32">
+	<main class="flex flex-col">
 		<h1
-			class="text-9xl drop-shadow-[0_6px_2px_rgba(217,70,239,0.8)] text-center pt-4 font-bold"
+			class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl drop-shadow-[0_6px_2px_rgba(217,70,239,0.8)] text-center font-bold"
 		>
-			<a href="/about">RABBITHOLE_AI</a>
-		</h1>
-		<h2
-			class="text-6xl mt-60 drop-shadow-[0_6px_1px_rgba(217,70,239,0.8)] text-center pt-4 font-bold"
-		>
-			<a href="/visual">SEHEN</a> - <a href="/audio">HÖREN</a> - <a href="/blog"
-				>SAGEN</a
+			<a
+				class="hover:drop-shadow-xl hover:shadow-fuchsia-900"
+				href="/about"
+				>RABBITHOLE_AI</a
 			>
-		</h2>
+		</h1>
+		<div
+			class="text-2xl drop-shadow-[0_6px_1px_rgba(217,70,239,0.8)] text-center font-bold"
+		>
+			<a href="/visual">SEHEN</a>
+			<span class="hidden md:inline-flex">-</span>
+			<a href="/audio">HÖREN</a>
+			<span class="hidden md:inline-flex">-</span>
+			<a href="/blog">SAGEN</a>
+		</div>
 	</main>
 </BaseLayout>
