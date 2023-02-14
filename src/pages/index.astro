@@ -11,10 +11,10 @@ const pageBackground = "bg-index-bg"
 >
 	<main class="flex flex-col">
 		<h1
-			class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl drop-shadow-[0_6px_2px_rgba(217,70,239,0.8)] text-center font-bold"
+			class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl drop-shadow-[0_6px_2px_rgba(217,70,239,0.8)] text-center font-bold transition duration-500"
 		>
 			<a
-				class="hover:drop-shadow-xl hover:shadow-fuchsia-900"
+				class="hover:drop-shadow-xl hover:shadow-fuchsia-900 hover:transition duration-700"
 				href="/about"
 				>RABBITHOLE_AI</a
 			>
@@ -22,11 +22,23 @@ const pageBackground = "bg-index-bg"
 		<div
 			class="text-2xl drop-shadow-[0_6px_1px_rgba(217,70,239,0.8)] text-center font-bold"
 		>
-			<a href="/visual">SEHEN</a>
+			<a
+				class="hover:drop-shadow-xl hover:shadow-fuchsia-900 hover:transition duration-700"
+				href="/visual"
+				>SEHEN</a
+			>
 			<span class="hidden md:inline-flex">-</span>
-			<a href="/audio">HÖREN</a>
+			<a
+				class="hover:drop-shadow-xl hover:shadow-fuchsia-900 hover:transition duration-700"
+				href="/audio"
+				>HÖREN</a
+			>
 			<span class="hidden md:inline-flex">-</span>
-			<a href="/blog">SAGEN</a>
+			<a
+				class="hover:drop-shadow-2xl hover:shadow-fuchsia-900 hover:transition duration-700"
+				href="/blog"
+				>SAGEN</a
+			>
 		</div>
 	</main>
 </BaseLayout>
