@@ -1,12 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro"
 const pageTitle = "About"
-
-const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"]
-
-const happy = true
-const finished = true
-const goal = 3
 ---
 
 <BaseLayout pageTitle={pageTitle}>
@@ -15,22 +9,5 @@ const goal = 3
 		<h2>Sammelsurium und Spielplatz</h2>
 
 		<p>Ein Ort an dem ich meine Interessen teile.</p>
-
-		<p>My skills are:</p>
-		<ul>
-			{skills.map((skill) => <li class="skill">{skill}</li>)}
-		</ul>
-
-		{happy && <p>I am happy to be learning Astro!</p>}
-
-		{finished && <p>I finished this tutorial!</p>}
-
-		{
-			goal === 3 ? (
-				<p>My goal is to finish in 3 days.</p>
-			) : (
-				<p>My goal is not 3 days.</p>
-			)
-		}
 	</main>
 </BaseLayout>

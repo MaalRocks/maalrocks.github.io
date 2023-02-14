@@ -1,7 +1,10 @@
 ---
 ---
 
-<button id="themeToggle">
+<button
+	id="themeToggle"
+	class="m-2 p-1"
+>
 	<svg
 		width="30px"
 		xmlns="http://www.w3.org/2000/svg"
@@ -41,8 +44,6 @@
 </style>
 
 <script>
-	import type { any } from "astro/zod"
-
 	const theme = (() => {
 		if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
 			return localStorage.getItem("theme")

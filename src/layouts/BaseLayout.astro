@@ -12,7 +12,10 @@ const { pageTitle } = Astro.props
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html
+	lang="de"
+	class="bg-red-300"
+>
 	<head>
 		<meta charset="UTF-8" />
 		<meta
@@ -30,7 +33,7 @@ const { pageTitle } = Astro.props
 		/>
 		<title>{pageTitle}</title>
 	</head>
-	<body>
+	<body class="container m-auto relative h-screen">
 		<Header />
 		<slot />
 		<Footer />

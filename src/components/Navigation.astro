@@ -1,9 +1,21 @@
 ---
+const navPages = [
+	["Home", "/"],
+	["About", "/about/"],
+	["Blog", "/blog/"],
+	["Tags", "/tags/"],
+]
 ---
 
-<div class="nav-links">
-	<a href="/">Home</a>
-	<a href="/about/">About</a>
-	<a href="/blog/">Blog</a>
-	<a href="/tags/">Tags</a>
+<div class="w-full flex justify-around items-center">
+	{
+		navPages.map(([title, url]) => (
+			<a
+				href={url}
+				class="rounded-lg px-3 py-2 text-slate-700 font-medium hover:bg-slate-100 hover:text-slate-900"
+			>
+				{title}
+			</a>
+		))
+	}
 </div>

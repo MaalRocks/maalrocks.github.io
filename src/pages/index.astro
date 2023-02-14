@@ -1,17 +1,12 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro"
-import Greeting from "../components/Greeting"
 
 const pageTitle = "Welcome to the Hole."
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-	<main>
-		<h2>Welcome to <span class="text-gradient">the Hole</span></h2>
-
-		<Greeting
-			client:load
-			messages={["Hej", "Hallo", "Hola", "Habari"]}
-		/>
+	<main class="flex justify-center">
+		<h1 class="text-6xl pt-4 font-bold">Wilkommen</h1>
+		<h2></h2>
 	</main>
 </BaseLayout>

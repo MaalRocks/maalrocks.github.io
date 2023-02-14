@@ -1,10 +1,16 @@
+/*
+.dark html {
+	background-color: #3a2634;
+	font-family: sans-serif;
+}
+
 html {
 	background-color: #b390a8;
 	font-family: sans-serif;
 }
 
 .dark body {
-	background-color: #0d0950;
+	background-color: #281ee9;
 	color: #fff;
 }
 
@@ -29,7 +35,7 @@ h1 {
 	font-size: 2.5rem;
 }
 
-/* nav styles */
+
 
 .hamburger {
 	padding-right: 20px;
@@ -90,3 +96,5 @@ a:focus {
 		display: none;
 	}
 }
+
+*/
