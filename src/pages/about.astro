@@ -1,5 +1,5 @@
 ---
-import Layout from "../layouts/Layout.astro"
+import BaseLayout from "../layouts/BaseLayout.astro"
 const pageTitle = "About Me"
 
 const identity = {
@@ -14,14 +14,14 @@ const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"]
 const happy = true
 const finished = false
 const goal = 3
+
+const skillColor = "navy"
+const fontWeight = "bold"
+const textCase = "uppercase"
 ---
 
-<Layout title={pageTitle}>
+<BaseLayout title={pageTitle}>
 	<main>
-		<a href="/">Home</a>
-		<a href="/about/">About</a>
-		<a href="/blog/">Blog</a>
-
 		<h1>My Astro Site</h1>
 		<h1>{pageTitle}</h1>
 		<h2>... and my new Astro site!</h2>
@@ -53,7 +53,7 @@ const goal = 3
 		</ul>
 		<p>My skills are:</p>
 		<ul>
-			{skills.map((skill) => <li>{skill}</li>)}
+			{skills.map((skill) => <li class="skill">{skill}</li>)}
 		</ul>
 
 		{happy && <p>I am happy to be learning Astro!</p>}
@@ -68,4 +68,4 @@ const goal = 3
 			)
 		}
 	</main>
-</Layout>
+</BaseLayout>

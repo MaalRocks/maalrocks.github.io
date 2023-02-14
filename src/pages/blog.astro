@@ -1,14 +1,10 @@
 ---
-import Layout from "../layouts/Layout.astro"
+import BaseLayout from "../layouts/BaseLayout.astro"
 const pageTitle = "The Hole"
 ---
 
-<Layout title={pageTitle}>
+<BaseLayout title={pageTitle}>
 	<main>
-		<a href="/">Home</a>
-		<a href="/about/">About</a>
-		<a href="/blog/">Blog</a>
-
 		<h1>Das Loch</h1>
 		<h1>Programmierer Künstler</h1>
 		<h2>...nimm nur einen Schluck!</h2>
@@ -22,4 +18,4 @@ const pageTitle = "The Hole"
 			<li><a href="/posts/post-3/">Post 3</a></li>
 		</ul>
 	</main>
-</Layout>
+</BaseLayout>
