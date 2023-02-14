@@ -2,11 +2,23 @@
 import BaseLayout from "../layouts/BaseLayout.astro"
 
 const pageTitle = "Welcome to the Hole."
+const pageBackground = "bg-index-bg"
 ---
 
-<BaseLayout pageTitle={pageTitle}>
-	<main class="flex justify-center">
-		<h1 class="text-6xl pt-4 font-bold">Wilkommen</h1>
-		<h2></h2>
+<BaseLayout
+	pageTitle={pageTitle}
+	pageBackground={pageBackground}
+>
+	<main class="flex flex-col w-full">
+		<h1
+			class="text-9xl drop-shadow-[0_6px_2px_rgba(217,70,239,0.8)] text-center pt-4 font-bold"
+		>
+			MAAL
+		</h1>
+		<h2
+			class="text-6xl drop-shadow-[0_6px_1px_rgba(217,70,239,0.8)] text-center pt-4 font-bold"
+		>
+			- SCHREIBEN - PROGRAMMIEREN - MUSIZIEREN -
+		</h2>
 	</main>
 </BaseLayout>

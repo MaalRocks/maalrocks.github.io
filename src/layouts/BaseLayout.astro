@@ -6,15 +6,16 @@ import Header from "../components/Header.astro"
 
 export interface Props {
 	pageTitle: string
+	pageBackground: string
 }
 
-const { pageTitle } = Astro.props
+const { pageTitle, pageBackground } = Astro.props
 ---
 
 <!DOCTYPE html>
 <html
 	lang="de"
-	class="bg-red-300"
+	class={`bg-cover bg-no-repeat bg-center bg-fixed ${pageBackground}`}
 >
 	<head>
 		<meta charset="UTF-8" />
@@ -33,10 +34,9 @@ const { pageTitle } = Astro.props
 		/>
 		<title>{pageTitle}</title>
 	</head>
-	<body class="container m-auto relative h-screen">
+	<body class="relative h-screen backdrop-blur-sm backdrop-brightness-50">
 		<Header />
 		<slot />
-		<Footer />
 
 		<script>
 			import "../scripts/menu.js"
