@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
-title: "Absturz"
+title: "Störung"
 pubDate: 2023-03-30
 description: "Optionen werden knapp"
 author: "Samuel Baker"
@@ -10,15 +10,15 @@ image:
 tags: ["Wahn", "Arbeit", "Probleme"]
 ---
 
-# Scheiße.
+Scheiße.
 
 Es ist wieder da.
 Hat sich problemmlos durch das Mauerwerk gekratzt und nun gibt es nurnoch den Kampf.
 
 Diesmal ist es nicht so einfach wie sonst. Es gibt Konsequenzen. Bittere Konsequenzen die sich nicht einfach ignorieren lassen.
-Es kennt meine Tricks, ich bin entwaffnet, ich bin kraftlos.
+Es kennt meine Tricks, ich bin entwaffnet.
 
-Welcome to my _new blog_ about learning Astro! Here, I will share my learning journey as I build a new website.
+<!-- Welcome to my _new blog_ about learning Astro! Here, I will share my learning journey as I build a new website.
 
 ## What I've accomplished
 
@@ -30,4 +30,4 @@ Welcome to my _new blog_ about learning Astro! Here, I will share my learning jo
 
 ## What's next
 
-I will finish the Astro tutorial, and then keep adding more posts. Watch this space for more to come.
+I will finish the Astro tutorial, and then keep adding more posts. Watch this space for more to come. -->

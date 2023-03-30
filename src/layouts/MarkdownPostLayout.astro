@@ -8,29 +8,30 @@ const { frontmatter } = Astro.props
 		src={frontmatter.image.url}
 		alt={frontmatter.image.alt}
 	/> -->
-	<p>
-		{frontmatter.title}
-	</p>
+	<articl class="prose prose-lg">
+		<div class="mb-2">
+			<h1 class="m-0">
+				{frontmatter.title}
+			</h1>
+			<em>{frontmatter.description}</em>
+		</div>
 
-	<p>
-		<em>{frontmatter.description}</em>
-	</p>
+		<slot />
 
-	<slot />
+		<p>{frontmatter.author} on {frontmatter.pubDate.slice(0, 10)}</p>
 
-	<p>{frontmatter.author} on {frontmatter.pubDate.slice(0, 10)}</p>
+		<span
+			class="text-xl w-60 mx-auto font-mono border-t-4 text-fuchsia-800 border-fuchsia-300 border-double border-opacity-40"
+		></span>
 
-	<span
-		class="text-xl w-60 mx-auto font-mono border-t-4 text-fuchsia-800 border-fuchsia-300 border-double border-opacity-40"
-	></span>
-
-	<div class="flex justify-around">
-		{
-			frontmatter.tags.map((tag: any) => (
-				<p class="tag">
-					<a href={`/tags/${tag}`}>{tag}</a>
-				</p>
-			))
-		}
-	</div>
+		<div class="flex justify-around">
+			{
+				frontmatter.tags.map((tag: any) => (
+					<p class="tag">
+						<a href={`/tags/${tag}`}>{tag}</a>
+					</p>
+				))
+			}
+		</div>
+	</articl>
 </BaseLayout>
