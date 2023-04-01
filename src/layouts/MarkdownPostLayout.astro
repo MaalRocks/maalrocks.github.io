@@ -4,21 +4,22 @@ const { frontmatter } = Astro.props
 ---
 
 <BaseLayout pageTitle={frontmatter.title}>
-	<article class="prose prose-lg mx-auto px-2">
-		<div class="mb-2 relative h-2">
-			<img
-				height="200px"
-				src={frontmatter.image.url}
-				alt={frontmatter.image.alt}
-			/>
+	<div class="relative mb-10">
+		<img
+			class="w-full h-96 object-cover"
+			src={frontmatter.image.url}
+			alt={frontmatter.image.alt}
+		/>
 
-			<div class="absolute bottom-0 bg-black w-full pl-1">
-				<h1 class="m-0">
-					{frontmatter.title}
-				</h1>
-				<em>{frontmatter.description}</em>
-			</div>
+		<div class="bg-black p-2 absolute w-full bottom-0">
+			<h1 class="m-0">
+				{frontmatter.title}
+			</h1>
+			<em>{frontmatter.description}</em>
 		</div>
+	</div>
+
+	<article class="prose prose-lg mx-auto px-2">
 		<slot />
 
 		<p>
