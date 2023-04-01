@@ -12,11 +12,12 @@ tags: ["Wahn", "Arbeit", "Probleme"]
 
 Scheiße.
 
-Es ist wieder da.
-Hat sich problemmlos durch das Mauerwerk gekratzt und nun gibt es nurnoch den Kampf.
+Es ist wieder da. </br>
+Hat sich problemlos durch das Mauerwerk gekratzt und nun gibt es nurnoch den Kampf.
 
 Diesmal ist es nicht so einfach wie sonst. Es gibt Konsequenzen. Bittere Konsequenzen die sich nicht einfach ignorieren lassen.
-Es kennt meine Tricks, ich bin entwaffnet.
+Es kennt meine Tricks. </br>
+Aber ich kenne auch Ihre.
 
 <!-- Welcome to my _new blog_ about learning Astro! Here, I will share my learning journey as I build a new website.
 

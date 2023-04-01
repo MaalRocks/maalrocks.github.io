@@ -4,21 +4,28 @@ const { frontmatter } = Astro.props
 ---
 
 <BaseLayout pageTitle={frontmatter.title}>
-	<!-- <img
-		src={frontmatter.image.url}
-		alt={frontmatter.image.alt}
-	/> -->
-	<articl class="prose prose-lg">
-		<div class="mb-2">
-			<h1 class="m-0">
-				{frontmatter.title}
-			</h1>
-			<em>{frontmatter.description}</em>
-		</div>
+	<article class="prose prose-lg mx-auto px-2">
+		<div class="mb-2 relative h-2">
+			<img
+				height="200px"
+				src={frontmatter.image.url}
+				alt={frontmatter.image.alt}
+			/>
 
+			<div class="absolute bottom-0 bg-black w-full pl-1">
+				<h1 class="m-0">
+					{frontmatter.title}
+				</h1>
+				<em>{frontmatter.description}</em>
+			</div>
+		</div>
 		<slot />
 
-		<p>{frontmatter.author} on {frontmatter.pubDate.slice(0, 10)}</p>
+		<p>
+			{frontmatter.pubDate.slice(0, 10)} - <a href="/about"
+				>{frontmatter.author}</a
+			>
+		</p>
 
 		<span
 			class="text-xl w-60 mx-auto font-mono border-t-4 text-fuchsia-800 border-fuchsia-300 border-double border-opacity-40"
@@ -33,5 +40,5 @@ const { frontmatter } = Astro.props
 				))
 			}
 		</div>
-	</articl>
+	</article>
 </BaseLayout>
