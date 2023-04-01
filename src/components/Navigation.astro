@@ -7,15 +7,15 @@ const navPages = [
 ]
 ---
 
-<nav class="w-full flex justify-around items-center">
+<ul class="w-full flex justify-around items-center">
 	{
 		navPages.map(([title, url]) => (
 			<a
 				href={url}
-				class="rounded-lg px-3 py-2 text-fuchsia-400-500 font-medium hover:bg-slate-100 hover:text-slate-900"
+				class="rounded-lg font-medium text-fuchsia-100  hover:text-fuchsia-900 "
 			>
 				{title}
 			</a>
 		))
 	}
-</nav>
+</ul>
