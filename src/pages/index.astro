@@ -1,5 +1,4 @@
 ---
-import BlogPost from "../components/BlogPost.astro"
 import BlogPostPreview from "../components/BlogPostPreview.astro"
 import TestComponent from "../components/TestComponent"
 import BaseLayout from "../layouts/BaseLayout.astro"
@@ -7,9 +6,10 @@ import BaseLayout from "../layouts/BaseLayout.astro"
 const allPosts = await Astro.glob("../pages/posts/*.md")
 
 const pageTitle = "Welcome to the Hole."
-const seperators = ["-", "+", "X"]
 
-const seperetaorSelection = Math.floor(2)
+// Random Link Seperators
+const seperators = ["-", "+", "X", ""]
+const random = Math.floor(Math.random() * seperators.length)
 ---
 
 <BaseLayout pageTitle={pageTitle}>
@@ -35,7 +35,7 @@ const seperetaorSelection = Math.floor(2)
 
 			<span
 				class="cursor-default drop-shadow-md ease-in shadow-black font-bold hover:drop-shadow-sm hover:shadow-fuchsia-900 hover:text-fuchsia-50 hover:transition duration-700"
-				>X</span
+				>{seperators[random]}</span
 			>
 
 			<a
@@ -46,7 +46,7 @@ const seperetaorSelection = Math.floor(2)
 
 			<span
 				class="cursor-default drop-shadow-md ease-in shadow-black font-bold hover:drop-shadow-sm hover:shadow-fuchsia-900 hover:text-fuchsia-50 hover:transition duration-700"
-				>X</span
+				>{seperators[random]}</span
 			>
 
 			<a

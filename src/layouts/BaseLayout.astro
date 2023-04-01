@@ -12,7 +12,7 @@ const { pageTitle } = Astro.props
 <!DOCTYPE html>
 <html
 	lang="de"
-	class="bg-gradient-to-t dark:from-purple-900 dark:to-black from-fuchsia-100 to-fuchsia-200 bg-no-repeat bg-cover dark:text-white scrollbar-none"
+	class="scrollbar-none"
 >
 	<head>
 		<meta charset="UTF-8" />
@@ -31,7 +31,9 @@ const { pageTitle } = Astro.props
 		/>
 		<title>{pageTitle}</title>
 	</head>
-	<body class="max-w-screen min-h-screen min-w-screen flex flex-col">
+	<body
+		class="bg-gradient-to-t dark:from-purple-900 dark:to-black from-fuchsia-100 to-fuchsia-200 bg-no-repeat bg-cover dark:text-white max-w-screen min-h-screen flex flex-col"
+	>
 		<Header />
 
 		<slot />
