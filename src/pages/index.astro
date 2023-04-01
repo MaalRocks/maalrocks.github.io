@@ -1,6 +1,7 @@
 ---
 import BlogPost from "../components/BlogPost.astro"
 import BlogPostPreview from "../components/BlogPostPreview.astro"
+import TestComponent from "../components/TestComponent"
 import BaseLayout from "../layouts/BaseLayout.astro"
 
 const allPosts = await Astro.glob("../pages/posts/*.md")
@@ -72,6 +73,6 @@ const seperetaorSelection = Math.floor(2)
 			</ul>
 		</div>
 
-		<div>hier kommt was hin</div>
+		<TestComponent client:load />
 	</main>
 </BaseLayout>
