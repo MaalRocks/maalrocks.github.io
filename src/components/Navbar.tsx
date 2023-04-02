@@ -1,4 +1,4 @@
-import { Component, createSignal } from "solid-js"
+import type { Component } from "solid-js"
 
 const Navbar: Component<{}> = (props) => {
 	const navPages = [
@@ -8,9 +8,7 @@ const Navbar: Component<{}> = (props) => {
 		["Themen", "/tags/"],
 	]
 
-	const getInfos = () => {
-		console.log("getInfos func:")
-
+	const toggleLinkListVisibility = () => {
 		const ul = document.getElementById("linkList")
 		ul?.classList.toggle("opacity-0")
 	}
@@ -34,7 +32,7 @@ const Navbar: Component<{}> = (props) => {
 			<button
 				class="cursor-pointer flex flex-col m-2"
 				onclick={() => {
-					getInfos()
+					toggleLinkListVisibility()
 				}}
 			>
 				<span class="w-10 h-1.5 m-1 bg-fuchsia-600/60"></span>

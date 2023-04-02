@@ -44,7 +44,9 @@
 </style>
 
 <script>
-	const theme = (() => {
+	import type { any } from "astro/zod"
+
+	const theme: any = (() => {
 		if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
 			return localStorage.getItem("theme")
 		}
