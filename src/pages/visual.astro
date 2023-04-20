@@ -1,0 +1,13 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro"
+
+const allPhotos = await Astro.glob("../../public/images/background/*.jpg")
+
+const pageTitle = "Visual"
+---
+
+<BaseLayout pageTitle={pageTitle}>
+	<main class="flex flex-col h-full">
+		{allPhotos.map((photo) => <img src={photo.default} />)}
+	</main>
+</BaseLayout>
