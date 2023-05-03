@@ -12,7 +12,7 @@ const { frontmatter } = Astro.props
 		/>
 
 		<div class="bg-black p-2 absolute w-full bottom-0">
-			<h1 class="m-0">
+			<h1 class="m-0 text-4xl">
 				{frontmatter.title}
 			</h1>
 			<em>{frontmatter.description}</em>
@@ -20,12 +20,12 @@ const { frontmatter } = Astro.props
 	</div>
 
 	<article class="prose prose-lg mx-auto px-2">
+		<em class="text-sm">{frontmatter.pubDate.slice(0, 10)}</em>
+
 		<slot />
 
 		<p>
-			{frontmatter.pubDate.slice(0, 10)} - <a href="/about"
-				>{frontmatter.author}</a
-			>
+			<a href="/about">{frontmatter.author}</a>
 		</p>
 
 		<span

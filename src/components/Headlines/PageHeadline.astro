@@ -1,0 +1,18 @@
+---
+export interface Props {
+	href: string
+	text: string
+}
+
+const { href, text } = Astro.props
+---
+
+<h1
+	class="text-7xl lg:text-8xl xl:text-9xl drop-shadow-[0_6px_2px_rgba(217,70,239,0.8)] text-fuchsia-200 text-center font-bold transition duration-600"
+>
+	<a
+		class="drop-shadow-md ease-in shadow-black text-center font-bold hover:drop-shadow-sm hover:shadow-fuchsia-900 hover:text-fuchsia-200 hover:transition duration-700"
+		href={href}
+		>{text}</a
+	>
+</h1>

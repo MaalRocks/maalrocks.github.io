@@ -1,78 +1,19 @@
 ---
 import BlogPostPreview from "../components/BlogPostPreview.astro"
-import TestComponent from "../components/TestComponent"
+import PageHeadline from "../components/Headlines/PageHeadline.astro"
 import BaseLayout from "../layouts/BaseLayout.astro"
 
 const allPosts = await Astro.glob("../pages/posts/*.md")
+const lastPost = allPosts.slice(-1)
 
 const pageTitle = "Welcome to the Hole."
-
-// Random Link Seperators
-const seperators = ["-", "+", "X", ""]
-const random = Math.floor(Math.random() * seperators.length)
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-	<main class="flex flex-col h-full">
-		<h1
-			class="text-7xl lg:text-8xl xl:text-9xl drop-shadow-[0_6px_2px_rgba(217,70,239,0.8)] text-fuchsia-200 text-center font-bold transition duration-600"
-		>
-			<a
-				class="drop-shadow-md ease-in shadow-black text-center font-bold hover:drop-shadow-sm hover:shadow-fuchsia-900 hover:text-fuchsia-200 hover:transition duration-700"
-				href="/about"
-				>RABBIT<br class="sm:hidden lg:visible" />HOLE_AI</a
-			>
-		</h1>
-
-		<div
-			class="my-7 flex justify-evenly text-fuchsia-600 drop-shadow-[0_6px_4px_rgba(217,70,239,0.8)] font-bold text-2xl"
-		>
-			<a
-				class="drop-shadow-md ease-in shadow-black font-bold hover:drop-shadow-sm hover:shadow-fuchsia-900 hover:text-fuchsia-50 hover:transition duration-700"
-				href="/visual"
-				>SEHEN</a
-			>
-
-			<span
-				class="cursor-default drop-shadow-md ease-in shadow-black font-bold hover:drop-shadow-sm hover:shadow-fuchsia-900 hover:text-fuchsia-50 hover:transition duration-700"
-				>{seperators[random]}</span
-			>
-
-			<a
-				class="drop-shadow-md ease-in shadow-black font-bold hover:drop-shadow-sm hover:shadow-fuchsia-900 hover:text-fuchsia-50 hover:transition duration-700"
-				href="/audio"
-				>HÖREN</a
-			>
-
-			<span
-				class="cursor-default drop-shadow-md ease-in shadow-black font-bold hover:drop-shadow-sm hover:shadow-fuchsia-900 hover:text-fuchsia-50 hover:transition duration-700"
-				>{seperators[random]}</span
-			>
-
-			<a
-				class="drop-shadow-md ease-in shadow-black font-bold hover:drop-shadow-sm hover:shadow-fuchsia-900 hover:text-fuchsia-50 hover:transition duration-700"
-				href="/blog"
-				>SAGEN</a
-			>
-		</div>
-
-		<span class="border-2 mx-auto w-7/12 border-fuchsia-300 border-dashed"
-		></span>
-
-		<div class="md:w-1/2 flex flex-1 h-auto my-2 mx-auto border-t-fuchsia-800">
-			<ul class="flex flex-col mx-auto justify-evenly">
-				{
-					allPosts.slice(-4).map((post) => (
-						<BlogPostPreview
-							url={post.url}
-							title={post.frontmatter.title}
-							description={post.frontmatter.description}
-						/>
-					))
-				}
-			</ul>
-		</div>
-
-		<TestComponent client:load />
+	<main class="flex justify-center items-center flex-1">
+		<PageHeadline
+			href="/blog"
+			text="RABBITHOLE_AI"
+		/>
 	</main>
 </BaseLayout>
