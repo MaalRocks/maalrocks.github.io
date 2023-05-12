@@ -17,10 +17,7 @@ const Navbar: Component<{}> = () => {
 
 	return (
 		<>
-			<ul
-				id="linkList"
-				class="w-full flex justify-around items-center transition-opacity duration-500 ease-in-out text-white"
-			>
+			<ul class="w-screen flex justify-around items-center text-primary-300">
 				<Show when={isPrimary()}>
 					<For each={primaryNavLinks}>
 						{(item) => (

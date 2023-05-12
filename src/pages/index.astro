@@ -1,19 +1,94 @@
 ---
 import BlogPostPreview from "../components/BlogPostPreview.astro"
 import PageHeadline from "../components/Headlines/PageHeadline.astro"
+import LastBlogPostPreview from "../components/LastBlogPostPreview.astro"
 import BaseLayout from "../layouts/BaseLayout.astro"
 
 const allPosts = await Astro.glob("../pages/posts/*.md")
-const lastPost = allPosts.slice(-1)
 
 const pageTitle = "Welcome to the Hole."
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-	<main class="flex justify-center items-center flex-1">
-		<PageHeadline
-			href="/blog"
-			text="RABBITHOLE_AI"
-		/>
+	<main class="flex flex-col items-center flex-grow">
+		<div class="flex flex-initial justify-center items-center my-16">
+			<h1
+				class="text-7xl lg:text-8xl xl:text-9xl drop-shadow-[0_6px_2px_rgba(217,70,239,0.8)] text-fuchsia-200 text-center font-bold transition duration-600"
+			>
+				<span
+					class="drop-shadow-md ease-in shadow-black text-center font-bold hover:drop-shadow-sm hover:shadow-fuchsia-900 hover:text-fuchsia-200 hover:transition duration-700"
+					>RABBITHOLE_AI
+				</span>
+			</h1>
+		</div>
+
+		{
+			allPosts.slice(-1).map((post) => (
+				<div class="flex">
+					<article class="prose prose-lg mx-auto text-primary-300 text-opacity-80 ">
+						<a
+							href={post.url}
+							class="p-2 w-full bottom-0"
+						>
+							<h1 class="m-0 text-4xl text-primary-300 text-opacity-80">
+								{post.frontmatter.title}
+							</h1>
+							<em class="text-primary-300 text-opacity-40">
+								{post.frontmatter.description}
+							</em>
+						</a>
+
+						<Fragment set:html={post.compiledContent()} />
+
+						<p>
+							<em class="text-sm text-primary-300 text-opacity-50">
+								<span>-</span>
+								<a
+									class="
+										text-primary-300 
+										text-opacity-50
+										font-mono
+										no-underline
+
+										hover:text-primary-200
+										hover:text-opacity-90 
+										hover:drop-shadow-[0px_0px_40px_rgba(240,171,252,0.8)]
+
+										duration-1000
+									"
+									href="/about"
+								>
+									{" "}
+									{post.frontmatter.author}
+								</a>
+							</em>
+						</p>
+
+						<div class="flex justify-around">
+							{post.frontmatter.tags.map((tag: any) => (
+								<p>
+									<a
+										class="
+											text-primary-300 
+											text-opacity-30
+
+										
+											hover:text-primary-200
+											hover:text-opacity-90 
+											hover:drop-shadow-[0px_0px_40px_rgba(240,171,252,0.8)]
+
+											duration-1000
+										"
+										href={`/tags/${tag}`}
+									>
+										{tag}
+									</a>
+								</p>
+							))}
+						</div>
+					</article>
+				</div>
+			))
+		}
 	</main>
 </BaseLayout>
