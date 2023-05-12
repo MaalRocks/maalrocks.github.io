@@ -2,18 +2,13 @@
 const { url, title, description } = Astro.props
 ---
 
-<li
-	class="bg-fuchsia-100 bg-opacity-40 shadow-fuchsia-400 hover:bg-fuchsia-50 hover:shadow-2xl hover:shadow-fuchsia-800 duration-700 ease-in"
+<a
+	class="rounded-sm border-primary-300 border-2 px-3 align-middle shadow-none hover:shadow-[0px_0px_400px_50px_rgba(240,171,252,0.9)] hover:bg-fuchsia-300 hover:bg-opacity-20 duration-1000 p-2 text-primary-300"
+	href={url}
 >
-	<a
-		class="text-2xl hover:drop-shadow-sm hover:shadow-fuchsia-900 hover:text-fuchsia-500 hover:transition duration-700 ease-in-out"
-		href={url}
-	>
-		<div
-			class="h-full p-3 text-gray-800 font-bold drop-shadow-md ease-in shadow-black hover:drop-shadow-sm hover:shadow-fuchsia-900 hover:text-fuchsia-500 hover:transition duration-700"
-		>
-			<h3>{title}</h3>
-			<small>{description}</small>
-		</div>
-	</a>
-</li>
+	<div>
+		<h3 class="font-bold">{title}</h3>
+		<em class="text-sm">{description}</em>
+		<p class="font-thin">asd</p>
+	</div>
+</a>

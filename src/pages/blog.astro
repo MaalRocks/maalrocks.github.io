@@ -9,17 +9,15 @@ const pageTitle = "Blog Posts"
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-	<main class="text-slate-200 mx-auto">
-		<ul>
-			{
-				allPosts.map((post) => (
-					<BlogPostPreview
-						url={post.url}
-						title={post.frontmatter.title}
-						description={post.frontmatter.description}
-					/>
-				))
-			}
-		</ul>
+	<main class="text-slate-200 grid grid-cols-3 gap-4 p-20">
+		{
+			allPosts.map((post) => (
+				<BlogPostPreview
+					url={post.url}
+					title={post.frontmatter.title}
+					description={post.frontmatter.description}
+				/>
+			))
+		}
 	</main>
 </BaseLayout>
