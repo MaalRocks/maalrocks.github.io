@@ -1,6 +1,9 @@
 import type { Component } from "solid-js"
 
-const NavbarItemLink: Component<{ href: string; text: string }> = (props) => {
+const NavbarItemLink: Component<{
+	href: string
+	text: string
+}> = (props) => {
 	return (
 		<a
 			class="
