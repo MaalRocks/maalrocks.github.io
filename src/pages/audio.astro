@@ -1,19 +1,42 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro"
 
-const allPhotos = await Astro.glob("../../public/images/background/*.jpg")
+const allSongs = await Astro.glob("/public/audio/songs/*.mp3")
+
+console.log("was isch", allSongs)
 
 const pageTitle = "Audio"
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-	<main class="grid grid-cols-3 gap-4">
+	<main class="flex justify-around items-center">
 		{
-			allPhotos.map((photo) => (
-				<img
-					class="object-scale-down aspect-auto  hover:shadow-2xl hover:scale-105 hover:shadow-black duration-300"
-					src={photo.default}
-				/>
+			allSongs.map((song) => (
+				<div class="bg-slate-800 bg-opacity-30 rounded-xl border-primary-300 border-2 border-opacity-10">
+					<div class="flex h-14 m-2">
+						<img
+							class="p-1"
+							alt=""
+							height="60"
+							width="60"
+						/>
+						<div class=" flex flex-col p-1 mx-1">
+							<span>Title</span>
+							<span>Album</span>
+						</div>
+					</div>
+					<audio
+						class="p-1 m-0 pseu"
+						controls
+					>
+						<source
+							class=""
+							src={song.default}
+							type="audio/mpeg"
+						/>
+						Your browser does not support the audio element.
+					</audio>
+				</div>
 			))
 		}
 	</main>
