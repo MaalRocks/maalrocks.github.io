@@ -1,14 +1,21 @@
 ---
-const { url, title, description } = Astro.props
+const { url, title, description, content } = Astro.props
 ---
 
 <a
-	class="rounded-sm border-primary-300 border-2 px-3 align-middle shadow-none hover:shadow-[0px_0px_400px_50px_rgba(240,171,252,0.9)] hover:bg-fuchsia-300 hover:bg-opacity-20 duration-1000 p-2 text-primary-300"
+	class="rounded-sm border-primary-300 bg-fuchsia-950 bg-opacity-10 border-2 px-3 align-middle shadow-none hover:shadow-[0px_0px_400px_50px_rgba(240,171,252,0.9)] hover:bg-fuchsia-300 hover:bg-opacity-20 duration-1000 p-2 text-primary-300 hover:border-opacity-90 border-opacity-70 hover:scale-105"
 	href={url}
 >
-	<div>
-		<h3 class="font-bold">{title}</h3>
-		<em class="text-sm">{description}</em>
-		<p class="font-thin">asd</p>
-	</div>
+	<article>
+		<div class="my-1 border-b-2 border-opacity-10 border-primary-400 py-1">
+			<h1 class="font-bold text-xl leading-4">{title}</h1>
+			<em class="text-sm">{description}</em>
+		</div>
+
+		<pre
+			class="whitespace-break-spaces overflow-hidden max-h-44">
+			<Fragment set:html={content} />
+		</pre>
+		<!-- <span class="text-lg">[...]</span> -->
+	</article>
 </a>

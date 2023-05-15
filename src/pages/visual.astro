@@ -7,7 +7,14 @@ const pageTitle = "Visual"
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-	<main class="flex flex-col h-full">
-		{allPhotos.map((photo) => <img src={photo.default} />)}
+	<main class="grid grid-cols-3 gap-4">
+		{
+			allPhotos.map((photo) => (
+				<img
+					class="object-scale-down aspect-auto  hover:shadow-2xl hover:scale-105 hover:shadow-black duration-300"
+					src={photo.default}
+				/>
+			))
+		}
 	</main>
 </BaseLayout>

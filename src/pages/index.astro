@@ -25,10 +25,25 @@ const pageTitle = "Welcome to the Hole."
 		{
 			allPosts.slice(-1).map((post) => (
 				<div class="flex">
-					<article class="prose prose-lg mx-auto text-primary-300 text-opacity-80 ">
+					<article class="prose prose-lg mx-auto text-primary-300 text-opacity-80">
 						<a
 							href={post.url}
-							class="p-2 w-full bottom-0"
+							class="
+								p-2
+								w-full
+								bottom-0 
+								
+								text-primary-300 
+								text-opacity-50
+								font-mono
+								no-underline
+
+								hover:text-primary-200
+								hover:text-opacity-90 
+								hover:drop-shadow-[0px_0px_40px_rgba(240,171,252,0.8)]
+
+								duration-1000
+							"
 						>
 							<h1 class="m-0 text-4xl text-primary-300 text-opacity-80">
 								{post.frontmatter.title}
