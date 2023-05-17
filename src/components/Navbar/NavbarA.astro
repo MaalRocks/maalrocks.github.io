@@ -1,0 +1,41 @@
+---
+const navbarLinks = [
+	[
+		["Sehen", "/visual"],
+		["Hören", "/audio"],
+		["Sagen", "/blog"],
+	],
+	[
+		["About", "/about/"],
+		["Kategorien", "/tags/"],
+	],
+]
+---
+
+<ul class="w-screen flex justify-around items-center text-primary-300">
+	<li>
+		<a
+			class="rounded-lg font-medium text-primary-300 text-opacity-70 hover:text-primary-200 hover:text-opacity-90 hover:drop-shadow-[0px_0px_40px_rgba(240,171,252,0.8)] duration-1000"
+			href={"href"}
+		>
+			{"text"}
+		</a>
+	</li>
+</ul>
+
+<button class="cursor-pointer flex flex-col m-2">
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		fill="none"
+		viewBox="0 0 24 24"
+		stroke-width="1.5"
+		stroke="currentColor"
+		class="h-12 opacity-80"
+	>
+		<path
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+		></path>
+	</svg>
+</button>

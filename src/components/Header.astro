@@ -1,5 +1,6 @@
 ---
 import Navbar from "./Navbar/Navbar"
+import NavbarA from "./Navbar/NavbarA.astro"
 import Navigation from "./Navigation.astro"
 import ThemeIcon from "./ThemeIcon.astro"
 ---
@@ -7,6 +8,8 @@ import ThemeIcon from "./ThemeIcon.astro"
 <header>
 	<nav class="w-full flex">
 		<Navbar client:load />
+
+		<NavbarA />
 
 		<!-- <Navigation /> -->
 
