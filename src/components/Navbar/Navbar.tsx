@@ -13,6 +13,7 @@ const Navbar: Component<{}> = () => {
 	const secondaryNavLinks = [
 		["About", "/about/"],
 		["Kategorien", "/tags/"],
+		["Home", "/"],
 	]
 
 	return (
