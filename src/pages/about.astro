@@ -1,17 +1,17 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro"
-const pageTitle = "Das Flüstern"
+import BaseLayout from "../layouts/BaseLayout.astro";
+const pageTitle = "Das Flüstern";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-	<main class="flex flex-col justify-center items-center">
-		<h1
-			class="text-7xl lg:text-8xl xl:text-9xl drop-shadow-[0_6px_2px_rgba(217,70,239,0.8)] text-fuchsia-200 text-center font-bold transition duration-600 my-16"
-		>
-			{pageTitle}
-		</h1>
-		<p class="text-2xl my-5 text-primary-200 text-opacity-80">
-			Was Hast du hier zu suchen?
-		</p>
-	</main>
+  <main class="flex flex-col justify-center items-center">
+    <h1
+      class="text-7xl lg:text-8xl xl:text-9xl drop-shadow-[0_6px_2px_rgba(217,70,239,0.8)] text-fuchsia-200 text-center font-bold transition duration-600 my-16"
+    >
+      {pageTitle}
+    </h1>
+    <p class="text-2xl my-5 text-primary-200 text-opacity-80">
+      Was Hast du hier zu suchen?
+    </p>
+  </main>
 </BaseLayout>

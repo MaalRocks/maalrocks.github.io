@@ -1,70 +1,69 @@
 ---
-import BaseLayout from "./BaseLayout.astro"
-const { frontmatter } = Astro.props
+import BaseLayout from "./BaseLayout.astro";
+const { frontmatter } = Astro.props;
 ---
 
 <BaseLayout pageTitle={frontmatter.title}>
-	<article class="prose prose-lg mx-auto px-2 text-primary-300 text-opacity-80">
-		<div class="relative mb-10">
-			<img
-				class="w-full h-60 object-cover"
-				src={frontmatter.image.url}
-				alt={frontmatter.image.alt}
-			/>
+  <article class="prose prose-lg mx-auto px-2 text-primary-300 text-opacity-80">
+    <div class="relative mb-10">
+      <img
+        class="w-full h-60 object-cover"
+        src={frontmatter.image.url}
+        alt={frontmatter.image.alt}
+      />
 
-			<div class="bg-black p-2 absolute w-full bottom-0">
-				<h1 class="m-0 text-4xl text-primary-300 text-opacity-80">
-					{frontmatter.title}
-				</h1>
-				<em>{frontmatter.description}</em>
-			</div>
-		</div>
+      <div class="bg-black p-2 absolute w-full bottom-0">
+        <h1 class="m-0 text-4xl text-primary-300 text-opacity-80">
+          {frontmatter.title}
+        </h1>
+        <em>{frontmatter.description}</em>
+      </div>
+    </div>
 
-		<slot />
+    <slot />
 
-		<p class="flex flex-col pt-5">
-			<em
-				class="text-[13px] text-primary-300 text-opacity-50 font-mono no-underline"
-				>{frontmatter.pubDate.slice(0, 10)}</em
-			>
+    <p class="flex flex-col pt-5">
+      <em
+        class="text-[13px] text-primary-300 text-opacity-50 font-mono no-underline"
+        >{frontmatter.pubDate.slice(0, 10)}</em
+      >
 
-			<em class="text-sm text-primary-300 text-opacity-50">
-				<span>-</span>
-				<a
-					class="text-primary-300 text-opacity-50 font-mono no-underline hover:text-primary-200 hover:text-opacity-90 hover:drop-shadow-[0px_0px_40px_rgba(240,171,252,0.8)] duration-1000"
-					href="/about"
-					>{frontmatter.author}</a
-				>
-			</em>
-		</p>
+      <em class="text-sm text-primary-300 text-opacity-50">
+        <span>-</span>
+        <a
+          class="text-primary-300 text-opacity-50 font-mono no-underline hover:text-primary-200 hover:text-opacity-90 hover:drop-shadow-[0px_0px_40px_rgba(240,171,252,0.8)] duration-1000"
+          href="/about">{frontmatter.author}</a
+        >
+      </em>
+    </p>
 
-		<span
-			class="text-xl w-60 mx-auto font-mono border-t-4 text-fuchsia-800 border-fuchsia-300 border-double border-opacity-40"
-		></span>
+    <span
+      class="text-xl w-60 mx-auto font-mono border-t-4 text-fuchsia-800 border-fuchsia-300 border-double border-opacity-40"
+    ></span>
 
-		<div class="flex justify-around">
-			{
-				frontmatter.tags.map((tag: any) => (
-					<p class="tag">
-						<a
-							class="
-											text-primary-300 
-											text-opacity-30
+    <div class="flex justify-around">
+      {
+        frontmatter.tags.map((tag: any) => (
+          <p class="tag">
+            <a
+              class="
+                text-primary-300 
+                text-opacity-30
 
-										
-											hover:text-primary-200
-											hover:text-opacity-90 
-											hover:drop-shadow-[0px_0px_40px_rgba(240,171,252,0.8)]
+            
+                hover:text-primary-200
+                hover:text-opacity-90 
+                hover:drop-shadow-[0px_0px_40px_rgba(240,171,252,0.8)]
 
-											duration-1000
-										"
-							href={`/tags/${tag}`}
-						>
-							{tag}
-						</a>
-					</p>
-				))
-			}
-		</div>
-	</article>
+                duration-1000
+            "
+              href={`/tags/${tag}`}
+            >
+              {tag}
+            </a>
+          </p>
+        ))
+      }
+    </div>
+  </article>
 </BaseLayout>

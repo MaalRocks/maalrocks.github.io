@@ -1,36 +1,36 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro"
-const allPosts = await Astro.glob("../posts/*.md")
-const tags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())]
-const pageTitle = "Tag Index"
+import BaseLayout from "../../layouts/BaseLayout.astro";
+const allPosts = await Astro.glob("../posts/*.md");
+const tags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())];
+const pageTitle = "Tag Index";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-	<div class="flex justify-evenly items-center text-2xl flex-1">
-		{
-			tags.map((tag) => (
-				<a
-					class="
-						rounded-sm
-						border-primary-300 
-						border-2 
-						px-3
-						align-middle 
-						shadow-none
+  <div class="flex justify-evenly items-center text-2xl flex-1">
+    {
+      tags.map((tag) => (
+        <a
+          class="
+            rounded-sm
+            border-primary-300 
+            border-2 
+            px-3
+            align-middle 
+            shadow-none
 
-						
+            
 
-						hover:shadow-[0px_0px_400px_50px_rgba(240,171,252,0.9)]
-						hover:bg-fuchsia-300
-						hover:bg-opacity-20
+            hover:shadow-[0px_0px_400px_50px_rgba(240,171,252,0.9)]
+            hover:bg-fuchsia-300
+            hover:bg-opacity-20
 
-						duration-1000
+            duration-1000
 					"
-					href={`/tags/${tag}`}
-				>
-					{tag}
-				</a>
-			))
-		}
-	</div>
+          href={`/tags/${tag}`}
+        >
+          {tag}
+        </a>
+      ))
+    }
+  </div>
 </BaseLayout>
